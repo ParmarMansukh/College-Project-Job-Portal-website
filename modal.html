@@ -1,0 +1,205 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 400px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+
+
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #e69900;
+}
+.main-content{
+
+    margin: 12px 90px;
+}
+ul{
+
+    justify-content: center;
+    align-items: center;
+    
+}
+</style>
+<body>
+
+
+    <pm>   
+
+
+
+        <button class="open-modal-btn" data-modal-id="modal1">Open Modal 1</button>
+        <button class="open-modal-btn" data-modal-id="modal2">Open Modal 2</button>
+        <button class="open-modal-btn" data-modal-id="modal3">Open Modal 3</button>
+        <button class="open-modal-btn" data-modal-id="modal4">Open Modal 4</button>
+        <button class="open-modal-btn" data-modal-id="modal5">Open Modal 5</button>
+        <button class="open-modal-btn" data-modal-id="modal6">parmar</button>
+
+    
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal-id="modal1">&times;</span>
+                <h2>Modal 1 Content</h2>
+                <p>This is the content for Modal 1.</p>
+            </div>
+        </div>
+    
+
+
+
+
+
+        <div id="modal6" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal-id="modal6">&times;</span>
+                <h2>Modal 6 Content</h2>
+                <p>This is the content for Modal 6.</p>
+            </div>
+        </div>
+
+
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal-id="modal2">&times;</span>
+                <h2>Modal 2 Content</h2>
+                <p>This is the content for Modal 2.</p>
+            </div>
+        </div>
+    
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal-id="modal3">&times;</span>
+                <h2>Modal 3 Content</h2>
+                <p>This is the content for Modal 3.</p>
+            </div>
+        </div>
+    
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal-id="modal4">&times;</span>
+                <h2>Modal 4 Content</h2>
+                <p>This is the content for Modal 4.</p>
+            </div>
+        </div>
+    
+        <div id="modal5" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal-id="modal5">&times;</span>
+                <h2>Modal 5 Content</h2>
+                <p>This is the content for Modal 5.</p>
+            </div>
+        </div>
+    
+        <script >
+    document.addEventListener("DOMContentLoaded", function () {
+        var openModalButtons = document.querySelectorAll(".open-modal-btn");
+        
+        openModalButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                var modalId = button.getAttribute("data-modal-id");
+                var modal = document.getElementById(modalId);
+                modal.style.display = "block";
+            });
+        });
+    
+        window.addEventListener("click", function (event) {
+            if (event.target.classList.contains("modal")) {
+                event.target.style.display = "none";
+            }
+        });
+    
+        var closeButtons = document.querySelectorAll(".close");
+        
+        closeButtons.forEach(function (closeButton) {
+            closeButton.addEventListener("click", function () {
+                var modalId = closeButton.getAttribute("data-modal-id");
+                var modal = document.getElementById(modalId);
+                modal.style.display = "none";
+            });
+        });
+    });
+    
+    
+    
+        </script>
+
+        
+</body>
+
+</html>
